@@ -1,0 +1,38 @@
+<h1>Welcome to my kingdom.</h1>
+<div class="row">
+  <div class="col-md-8">
+    <a href="/divisions/new" class="btn btn-default" role="button">Make New Divisions</a>
+
+    <a href="/employees/new"  class="btn btn-default" role="button">Make New Employees</a>
+  </div>
+</div>
+
+<br>
+
+<div class="row">
+  <div class="col-sm-4">
+    <h3>Divisions</h3>
+    <br>
+    <br>
+    <br>
+    <br>
+    <ul>
+      <% @divisions.each() do |division| %>
+        <li>
+          <a href="/divisions/<%= division.id %>" class="btn btn-default" role="button"><%= division.name() %></a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="col-sm-4">
+    <h3>Those with the unfortunate status of being in our employ</h3>
+    <% @employees.each() do |employee| %>
+    <ul>
+      <li>
+        <a href="/employees/<%= employee.id %>"><%= employee.name() %></a>
+      </li>
+    </ul>
+    <% end %>
+  </div>
+</div>
